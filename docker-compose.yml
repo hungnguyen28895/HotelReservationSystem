@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  hotelreservationservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    extra_hosts:
+      - "login.microsoftonline.com:40.126.29.13"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: HotelReservationApi
+    ports:
+      - "44330:8080"
